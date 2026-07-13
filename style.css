@@ -34,13 +34,22 @@ body {
     font-size: 14px;
 }
 
-.nav-links a {
-    color: #bbb;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    transition: 0.3s;
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin: 8px;
+    }
 }
 
 .nav-links a:hover, .nav-links a.active {
