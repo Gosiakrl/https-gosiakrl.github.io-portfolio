@@ -64,12 +64,23 @@ body {
     box-shadow: 0 0 20px #ff0033;
 }
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 8%;
-    min-height: 70vh;
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+        gap: 40px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .neon-text {
+        font-size: 42px;
+    }
+}
 }
 
 .hero-text {
