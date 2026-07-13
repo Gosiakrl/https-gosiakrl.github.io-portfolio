@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Małgorzata / DESIGN - Projekty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Małgorzata <span>/ DESIGN</span></div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="index.html#o-mnie">O MNIE</a>
+            <a href="index.html#narzedzia">NARZĘDZIA</a>
+        </div>
+        <a href="MKrolczyk_CV.pdf" class="btn-cv">Moje CV</a>
+    </nav>
+
+    <main class="projects-section">
+        <h1 class="projects-title">MOJE PROJEKTY</h1>
+        <p class="projects-subtitle">Kliknij w projekt, aby zobaczyć pełną galerię zdjęć</p>
+
+        <div class="projects-grid">
+            
+            <div class="project-card" onclick="openGallery(['p1.jpg', 'p2.jpg', 'p3.jpg'])">
+                <div class="project-img">
+                    <img src="projekt1.png" alt="MODEL z LEGO">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Bricklink Studio</span>
+                    <h3>Audi TT z klocków Lego</h3>
+                    <p>Mój 1 i narazie jedyny model z klocków zaprojektowany w aplikacji Bricklink Studio. Niestety nie został zaakceptowany przez firme Lego ponieważ w tamtym czasie nie mieli wsółpracy z Audi.</p>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openGallery(['p2.1.png', 'p2.2.png', 'p2.3.png', 'p2.4.png', 'p2.5.png' ])">
+                <div class="project-img">
+                    <img src="projekt2.png" alt="Strona Internetowa Restauracji">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">UX/UA Design</span>
+                    <h3>Wilczy Krąg</h3>
+                    <p>Projekt własnej strony internetowej z działającymi przyciskami typu menu czy o nas działającą ankietą dla gości, pokliknięciu w pasek ,,TU Jesteśmy" przenosi nas do google maps.</p>
+                </div>
+            </div>
+                 <div class="project-card" onclick="openGallery(['p3.1.png', 'p3.2.png', 'p3.3.png', 'p3.4.png', 'p3.5.png'])">
+                <div class="project-img">
+                    <img src="projekt3.png" alt="Modele 3D w blenderze">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Blender</span>
+                    <h3>Modele w 3D </h3>
+                    <p>Kilka modeli w 3D z blendera.</p>
+                </div>
+            </div>
+             <div class="project-card" onclick="openGallery(['p4.1.png', 'p4.2.png', 'p4.4.png', 'p4.5.png', 'p4.6.png', 'p4.7.jpg', 'p4.8.png', 'p4.9.jpg', 'p4.10.jpg', 'p4.11.png', 'p4.12.png', 'p4.13.jpg', 'p4.14.png'])">
+                <div class="project-img">
+                    <img src="projekt4.png" alt="Losowe projekty w Photoshopie">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Photoshop</span>
+                    <h3>Zdjęcia w Photoshop </h3>
+                    <p>Kilka losowych zaprojektowanych i przerobionych zdjęć.</p>
+                </div>
+            </div>
+            <div class="project-card" onclick="openGallery(['p5.1.png', 'p5.2.png', 'p5.3.png'])">
+                <div class="project-img">
+                    <img src="projekt5.png" alt="Gra w html">
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">HTML/CSS/JAVA</span>
+                    <h3>Gra na stronie internetowej </h3>
+                    <p>Gra o strzelaniu do bocianów w stylu FPS Shooter.Celem gracza jest szybkie i
+                     precyzyjne strzelanie do bocianów, jednocześnie unikając bocianów z dzieckiem. Gra
+                       wprowadza elementy czasowe i celowe, zwiększając wyzwanie i dynamikę rozgrywki. </p>
+                </div>
+         
+
+
+        </div>
+    </main>
+
+    <div id="galleryModal" class="gallery-modal">
+        <span class="close-modal" onclick="closeGallery()">&times;</span>
+        
+        <div class="modal-content">
+            <div class="modal-grid" id="modalGrid"></div>
+        </div>
+    </div>
+
+    <script>
+        function openGallery(imagesArray) {
+            const modal = document.getElementById('galleryModal');
+            const container = document.getElementById('modalGrid');
+            
+            // Czyszczenie starej galerii przed otwarciem nowej
+            container.innerHTML = '';
+            
+            // Generowanie obrazków na podstawie podanej listy plików
+            imagesArray.forEach(imageSrc => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imageSrc;
+                imgElement.alt = "Zdjęcie z galerii";
+                container.appendChild(imgElement);
+            });
+            
+            // Pokazanie okienka
+            modal.style.display = "flex";
+            // Zablokowanie przewijania strony w tle
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeGallery() {
+            const modal = document.getElementById('galleryModal');
+            modal.style.display = "none";
+            // Przywrócenie przewijania strony
+            document.body.style.overflow = "auto";
+        }
+
+        // Zamknięcie po kliknięciu poza zdjęcia (w ciemne tło)
+        window.onclick = function(event) {
+            const modal = document.getElementById('galleryModal');
+            if (event.target == modal) {
+                closeGallery();
+            }
+        }
+    </script>
+
+</body>
+</html>

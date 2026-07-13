@@ -1,0 +1,749 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #050101; 
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(5, 1, 1, 0.95);
+    border-bottom: 1px solid #1a0505;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #555;
+    font-size: 14px;
+}
+
+.nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ff0033;
+    text-shadow: 0 0 8px #ff0033;
+}
+
+.btn-cv {
+    border: 1px solid #ff0033;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 0, 51, 0.3);
+    transition: 0.3s;
+}
+
+.btn-cv:hover {
+    background: #ff0033;
+    box-shadow: 0 0 20px #ff0033;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 8%;
+    min-height: 70vh;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.greeting {
+    color: #ff0033;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.neon-text {
+    font-size: 70px;
+    color: #fff;
+    letter-spacing: 5px;
+    text-shadow: 
+        0 0 5px #ff0033,
+        0 0 15px #ff0033,
+        0 0 30px #ff0033;
+}
+
+.hero h2 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #eee;
+}
+
+.description {
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-btns a {
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    border: 1px solid #ff0033;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 51, 0.4);
+}
+
+.btn-primary:hover {
+    background: #ff0033;
+    box-shadow: 0 0 25px #ff0033;
+}
+
+.btn-secondary {
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    border-color: #ff0033;
+    box-shadow: 0 0 15px rgba(255, 0, 51, 0.3);
+}
+
+.hero-image-container {
+    position: relative;
+}
+.neon-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 2px solid #ff0033;
+    box-shadow: 
+        0 0 20px #ff0033,
+        inset 0 0 20px #ff0033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle, #550011 0%, #1a0206 100%); 
+}
+.hero-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.placeholder-avatar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #110303, #330007);
+}
+.skills-section {
+    padding: 60px 8% 80px; /* Zmniejszono górny odstęp ze 180px do 60px */
+    background-color: #050101;
+    border-top: 1px solid #1a0505;
+    border-bottom: 1px solid #1a0505;
+    margin-top: 20px;       /* Zmniejszono margines z 40px do 20px */
+}
+
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Nagłówek sekcji */
+.skills-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills-label {
+    color: #ff0033;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.skills-title {
+    font-size: 38px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-shadow: 
+        0 0 5px #ff0033,
+        0 0 15px #ff0033;
+}
+
+.skills-description {
+    color: #888;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Siatka ikon */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+/* Pojedyncza ikona */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Kontener ikony */
+.skill-icon {
+    width: 95px;
+    height: 95px;
+    background-color: #0a0202;
+    border: 2px solid #1a0505;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 0, 51, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    border-color: #ff0033;
+    box-shadow: 
+        0 0 15px rgba(255, 0, 51, 0.4),
+        inset 0 0 15px rgba(255, 0, 51, 0.1);
+    background-color: #110303;
+}
+
+.skill-item:hover .skill-icon::before {
+    opacity: 1;
+}
+
+/* Obrazy ikon */
+.skill-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 51, 0.3));
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.skill-item:hover .skill-icon img {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 51, 0.8));
+    transform: scale(1.1);
+}
+
+/* Nazwa narzędzia */
+.skill-name {
+    color: #bbb;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-name {
+    color: #ff0033;
+    text-shadow: 0 0 8px #ff0033;
+}
+
+/* Responsywność */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 30px;
+    }
+
+    .skills-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 60px 5%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 25px;
+    }
+
+    .skill-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skill-icon img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .skills-title {
+        font-size: 28px;
+    }
+
+    .skills-description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 40px 4%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+        gap: 20px;
+    }
+
+    .skill-icon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .skill-icon img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .skills-title {
+        font-size: 22px;
+    }
+
+    .skill-name {
+        font-size: 11px;
+    }
+}
+.skills-grid img {
+    width: 110px;
+    height: auto;
+    transition: 0.3s;
+}
+
+.skills-grid img:hover {
+    transform: scale(1.05);
+}
+.about-section {
+    padding: 100px 8%;
+    background-color: #050101;
+    text-align: center;
+    border-bottom: 1px solid #1a0505;
+}
+
+.about-section h2 {
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ff0033, 0 0 15px #ff0033;
+}
+
+.about-section p {
+    color: #888;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 16px;
+}
+/* Sekcja galerii */
+.about-gallery-section {
+    margin-top: 140px; 
+    text-align: center;
+}
+
+/* POPRAWIONY NAPIS – TERAZ JEST CZERWONYM NEONEM */
+.gallery-title {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 5px #ff0033,
+        0 0 15px #ff0033,
+        0 0 30px #ff0033; /* Ten sam neonowy blask co w logo i nagłówkach */
+}
+
+/* Siatka dla 3 zdjęć */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center; /* Wyrównuje zdjęcia w pionie, jeśli mają teraz różne proporcje */
+}
+
+/* Kontener na zdjęcie */
+.gallery-item {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #1a0505;
+    transition: all 0.3s ease;
+}
+
+/* INDYWIDUALNE ROZMIARY ZDJĘĆ: */
+
+.item-tt {
+    max-width: 250px; /* Audi TT zostaje w standardowym rozmiarze */
+}
+
+.item-quad {
+    max-width: 300px; /* POWIĘKSZONY QUAD (wcześniej było 250px) */
+}
+
+.item-kot {
+    max-width: 160px; /* ZMNIEJSZONY KOT (wcześniej było 250px) */
+}
+
+/* Efekt najechania (neon wokół ramki) */
+.gallery-item:hover {
+    border-color: #ff0033;
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.5);
+    transform: translateY(-5px);
+}
+
+/* Obrazki wewnątrz ramek */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Efekt najechania (neon wokół ramki) */
+.gallery-item:hover {
+    border-color: #ff0033;
+    box-shadow: 0 0 20px rgba(255, 0, 51, 0.5);
+    transform: translateY(-5px);
+}
+
+/* POPRAWIONE ZDJĘCIA – JUŻ NIE SĄ UCIĘTE */
+.gallery-item img {
+    width: 100%;
+    height: auto; /* Zmieniono ze 180px na auto – zdjęcie dopasuje się naturalnie bez ucinania */
+    display: block;
+}
+/* ==========================================================================
+   STYLE DLA PODSTRONY Z PROJEKTAMI
+   ========================================================================== */
+
+.projects-section {
+    padding: 60px 8% 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.projects-title {
+    font-size: 42px;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 
+        0 0 5px #ff0033,
+        0 0 15px #ff0033;
+}
+
+.projects-subtitle {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+
+/* Siatka projektów */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Karta pojedynczego projektu */
+.project-card {
+    background-color: #0a0202;
+    border: 2px solid #1a0505;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Efekt najechania na kartę projektu */
+.project-card:hover {
+    border-color: #ff0033;
+    box-shadow: 0 0 25px rgba(255, 0, 51, 0.4);
+    transform: translateY(-8px);
+}
+
+/* Miejsce na zdjęcie projektu */
+.project-img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 2px solid #1a0505;
+    background: #110303; /* Tło zanim załaduje się zdjęcie */
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.05); /* Delikatne przybliżenie zdjęcia przy najechaniu */
+}
+
+/* Opis projektu pod zdjęciem */
+.project-info {
+    padding: 25px;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: rgba(255, 0, 51, 0.1);
+    color: #ff0033;
+    border: 1px solid #ff0033;
+    padding: 4px 12px;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.project-info h3 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.gallery-modal {
+    display: none; /* Domyślnie ukryte */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 1, 1, 0.95); /* Ciemne tło strony z lekką przezroczystością */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px); /* Efekt rozmycia tła za okienkiem */
+}
+
+/* Przycisk zamknij (X) */
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #ff0033;
+    text-shadow: 0 0 10px #ff0033;
+}
+
+/* Kontener na zawartość galerii */
+.modal-content {
+    width: 90%;
+    max-width: 1000px;
+    max-height: 80%;
+    overflow-y: auto; /* Przewijanie galerii w pionie, jeśli zdjęć jest dużo */
+    padding: 20px;
+}
+
+/* Układ zdjęć wewnątrz okienka (siatka pionowa lub dwukolumnowa) */
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Zdjęcia jedno pod drugim w pełnej okazałości */
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Wygląd zdjęć w galerii */
+.modal-grid img {
+    width: 100%;
+    max-width: 550px; /* ZMNIEJSZONO Z 850px NA 550px – teraz zdjęcia będą zgrabniejsze i nie zajmą całego ekranu */
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #1a0505;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transition: border-color 0.3s;
+}
+
+/* Neonowy akcent po najechaniu na zdjęcie wewnątrz galerii */
+.modal-grid img:hover {
+    border-color: #ff0033;
+}
+
+/* Estetyczny wygląd paska przewijania wewnątrz okienka */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #ff0033;
+    border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: #050101;
+}
+.contact-section {
+    padding: 80px 8% 40px;
+    background-color: #050101; /* Ten sam głęboki czarny odcień */
+    border-top: 1px solid #1a0505; /* Delikatna linia oddzielająca sekcje */
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-size: 38px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 
+        0 0 5px #ff0033,
+        0 0 15px #ff0033; /* Neonowy blask spójny z resztą strony */
+}
+
+.contact-subtitle {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    font-size: 18px;
+}
+
+.contact-label {
+    color: #ff0033; /* Czerwone wyróżnienie dla etykiet */
+    font-weight: bold;
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Efekt najechania na e-mail lub telefon */
+.contact-link:hover {
+    color: #ff0033;
+    text-shadow: 0 0 8px #ff0033;
+}
+
+/* Menu z mediami społecznościowymi */
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.contact-socials a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-socials a:hover {
+    color: #ff0033;
+    text-shadow: 0 0 8px #ff0033;
+}
+
+/* Dopisek o prawach autorskich na samym dole */
+.copyright {
+    color: #444;
+    font-size: 12px;
+    border-top: 1px solid #1a0505;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
